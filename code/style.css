@@ -1,14 +1,12 @@
+/* This was here before ---
+
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&display=swap');
-
-/* This was here before ---
 
 html {
   background: #0025ff;
   color: #fff;
 }
-
-
 
 #logo-PC {
   height: 50px;
@@ -23,7 +21,6 @@ html {
 .secondary-navigation {
   float: right;
 }
-
 
 li {
   float: left;
@@ -49,12 +46,34 @@ li a {
   background-color: #E6E6DD;
 }
 
-
-
-
-
 --- */
 
+:root {
+  --font-title: "Anton", sans-serif;
+  --font-subtitle: "Antonio", sans-serif;
+  --font-p: "Signika", serif;
+
+  --fw-n: 300;
+  --fw-m: 600;
+  --fw-b: 800;
+
+  --fs-2: 2rem;
+  --fs-3: 1.5rem;
+  --fs-p: 1rem;
+
+  --primary-clr: #127475;
+  --secondary-clr: #CCB47B;
+  --secondary-clr-light: #E6E6DD;
+  --accent-clr: #FF7458;
+  --text-clr: #2B2B2B;
+
+  --spacer: 1rem;
+  --spacer-md: calc(var(--spacer)*2);
+  --spacer-lg: calc(var(--spacer)*3);
+
+  --br: 5px;
+
+}
 
 * {
   box-sizing: border-box;
@@ -62,14 +81,37 @@ li a {
   padding: 0;
 }
 
-header {
-  width: 100%;
-  height: 80px;
-  background-color: #f8f8f8;
-  position: fixed;
-  z-index: 5;
+/* Typography rules*/
+
+h2 {
+  font-family: var(--font-title);
+  color: var(--primary-clr);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-n);
+  margin-bottom: var(--spacer);
 }
 
+h3 {
+  font-family: var(--font-subtitle);
+  font-size: var(--fs-3);
+  color: var(--text-clr);
+  margin-bottom: var(--spacer-md);
+}
+
+p {
+  font-family: var(--font-p);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-n);
+  line-height: calc(var(--fs-p)*1.5);
+}
+
+span {
+  font-family: var(--font-subtitle);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-n);
+  color: var(--secondary-clr);
+  font-style: italic;
+}
 
 body {
   background-color: #fff;
@@ -77,11 +119,28 @@ body {
   color: #000;
 }
 
+/* the content starts under the navigation*/
+.wrapper {
+  position: absolute;
+  top: 120px;
+}
+
+/* This makes content centered and less than 1084px wide*/
 .container {
   position: relative;
   max-width: 1084px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Top navigation - header */
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #f8f8f8;
+  position: fixed;
+  z-index: 5;
 }
 
 .top-h {
@@ -105,21 +164,20 @@ ul {
   list-style-type: none;
   display: flex;
   align-items: center;
-  font-family: "Antonio", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
+  font-family: var(--font-subtitle);
+  font-weight: var(--fw-m);
+  font-size: var(--fs-p);
 }
 
 li a {
-  color: rgb(77, 77, 77);
+  color: var(--text-clr);
   text-decoration: none;
   padding: 8px 16px;
   text-align: center;
 }
 
 li a:hover {
-  color: #CCB47B;
+  color: var(--secondary-clr);
 }
 
 li {
@@ -135,14 +193,14 @@ li {
 }
 
 .bottom-h {
-  background-color: #E6E6DD;
+  background-color: var(--secondary-clr-light);
   display: flex;
   justify-content: space-between;
   height: 30px;
 }
 
 .nav-highlight {
-  background: #127475;
+  background: var(--primary-clr);
   color: white;
   height: 100%;
   text-align: center;
@@ -151,9 +209,31 @@ li {
 
 .nav-highlight:hover {
   cursor: cell;
-  color: #CCB47B;
+  color: var(--secondary-clr);
 }
 
-#wrapper {
-  padding-top: 100px;
+/* News grid layout*/
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: 300px;
+  column-gap: var(--spacer);
+  row-gap: var(--spacer-lg);
+}
+
+.big-news {
+  grid-column: 3 / span 2;
+}
+
+.big-news-img {
+  grid-column: 1 / span 2;
+  background-image: url("./assets/floodplains.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.news-grid>article {
+  /* background-color: #f8f8f8; */
 }

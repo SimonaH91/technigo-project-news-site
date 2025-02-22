@@ -18,6 +18,16 @@ Other good references:
 The content of the articles is taken from WWF and Nature.
 
 - If you had more time, what would be next?
+    - Social media links/icons on the secondary navigation bar
+    - collapsing menu for the "Sections" link in the primary navigation
+    - zoom in effect on hovering over the big news image
 
 ## View it live on Netlify:
 https://planetuplift.netlify.app/
+
+
+## Design guidelines
+Font pairing:
+https://heyreliable.com/ultimate-google-font-pairings/
+
+
