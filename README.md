@@ -13,10 +13,11 @@ I chose this website as a reference and inspected the code in order to mimic its
 Other good references:
   - https://wwf.panda.org/ 
   - https://www.optimistdaily.com/
+  - https://ideas.ted.com/ or https://www.ted.com/
 
 The content of the articles is taken from WWF and Nature.
 
 - If you had more time, what would be next?
 
-## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+## View it live on Netlify:
+https://planetuplift.netlify.app/
